@@ -7,7 +7,6 @@
  * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
  */
 /******/ (() => { // webpackBootstrap
-/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./scss/style.scss":
@@ -16,6 +15,7 @@
   \*************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack:///./scss/style.scss?");
 
 /***/ }),
@@ -24,9 +24,9 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 /*!*********************!*\
   !*** ./js/index.js ***!
   \*********************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _scss_style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../scss/style.scss */ \"./scss/style.scss\");\n\r\n\r\n__webpack_require__(/*! ../scss/style.scss */ \"./scss/style.scss\");\r\n  a = 5\r\n  console.log(a)\n\n//# sourceURL=webpack:///./js/index.js?");
+eval("__webpack_require__(/*! ../scss/style.scss */ \"./scss/style.scss\");\r\n\n\n//# sourceURL=webpack:///./js/index.js?");
 
 /***/ })
 

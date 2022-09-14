@@ -2,6 +2,7 @@ const path = require("path");
 const HTMLWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: "./js/index.js",
@@ -17,17 +18,19 @@ module.exports = {
       template: "./index.html",
     }),
     new CleanWebpackPlugin(),
-    new MiniCssExtractPlugin()
+    new MiniCssExtractPlugin(),
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: path.resolve(__dirname,"./src/img"), to: "img" }
+      ],
+    }),
   ],
   devServer: {
-    port: 6666,
+    port: 6666,/* chrome considers it to be an unsafe port so in order to access the server you should set special flag to be able to use the port. But since i've put so many hours in this build i want it to be 666 ( •̀ᴗ•́ )و */
   },
   module: {
     rules: [
-      {
-        test: /\.css$/i,
-        use: [MiniCssExtractPlugin.loader, "css-loader"],
-      },
+      
       {
         test: /\.scss$/,
         use: [
@@ -37,10 +40,21 @@ module.exports = {
           'sass-loader', // compiles Sass to CSS, using Node Sass by default
         ],
       },
+      
       {
         test: /\.(png|svg|jpg|gif)$/,
-        use:["file-loader"]
-      } 
+        type: 'asset/resource',
+        generator: {
+            filename: './img/[name][ext]',
+        },
+    },
+      {
+        test: /\.(woff(2)?|ttf|eot)$/,
+        type: 'asset/resource',
+        generator: {
+            filename: './fonts/[name][ext]',
+        },
+    },
     ]
     },
 };
