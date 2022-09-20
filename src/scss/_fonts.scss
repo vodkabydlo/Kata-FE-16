@@ -30,3 +30,10 @@
   font-weight: 500;
   font-style: normal;
 }
+@mixin font ($size, $weight, $height, $spacing, $transform: none){
+font-size: $size;
+font-weight: $weight;
+line-height: $height;
+letter-spacing: $spacing;
+text-transform: $transform;
+}

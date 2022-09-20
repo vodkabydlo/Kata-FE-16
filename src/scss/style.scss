@@ -1,9 +1,9 @@
 @use "normalize.scss";
 @use "fonts.scss";
 
-$mobile-width: 320px;
-$tablet-width: 768px;
-$desktop-width: 1440px;
+$mobile-width: 319px;
+$tablet-width: 767px;
+$desktop-width: 1439px;
 
 html {
   font-family: TT Lakes;
@@ -16,7 +16,7 @@ body {
 }
 .main-container {
   margin: 0 auto;
-  
+
   max-width: 1120px;
   background-color: #f8f8f8;
   display: flex;
@@ -40,11 +40,7 @@ body {
   padding: 0 24px;
   &__page-title {
     position: relative;
-    font-family: TT Lakes;
-    font-size: 28px;
-    line-height: 40px;
-    letter-spacing: -0.6000000238418579px;
-    text-align: left;
+    @include fonts.font(28px, bold, 40px, -0.6px);
 
     &::before {
       content: "";
@@ -55,7 +51,6 @@ body {
       border: 2px solid rgba(65, 246, 215, 1);
       border-radius: 5px;
     }
-    
   }
   &__left {
     display: none;
@@ -88,12 +83,9 @@ body {
       flex-wrap: wrap;
       padding-right: 8px;
       white-space: nowrap;
-      font-weight: 500;
-      font-size: 16px;
-      line-height: 24px;
       text-align: right;
-      letter-spacing: -0.2px;
       color: rgba(27, 28, 33, 1);
+      @include fonts.font(16px, normal, 24px, -0.2px);
     }
   }
 }
@@ -102,12 +94,12 @@ body {
 }
 .delimiter {
   width: 0;
-  background-color: #EAEAEA;
+  background-color: #eaeaea;
   height: 32px;
-  border: 1px solid #EAEAEA;
+  border: 1px solid #eaeaea;
   border-radius: 1px;
   padding: 0 !important;
-  margin-left:8px;
+  margin-left: 8px;
   margin-right: 8px;
 }
 
@@ -116,11 +108,11 @@ body {
   .main-container {
     max-width: 1440px;
   }
-  
+
   .upper-menu {
     background-color: #fff;
     &__left {
-      display:flex;
+      display: flex;
     }
     &__item {
       padding-left: 8px;
@@ -133,29 +125,27 @@ body {
       }
     }
     &__page-title {
-      display:none;
-    
+      display: none;
+    }
   }
-}
 }
 @media (max-width: $tablet-width) {
   .upper-menu {
     &__left .delimiter {
-      display:none;
+      display: none;
     }
     &__right &__item-tablet:not(.delimiter) {
-      display:none;
-    }
-
+      display: none;
     }
   }
+}
 
 //----------------------BODY----------------------
 .body {
   padding: 0 24px;
 
   &__page-title {
-    display:none;
+    display: none;
     position: relative;
     &::before {
       content: "";
@@ -168,24 +158,124 @@ body {
     }
     padding-left: 0px;
   }
+  &__text-wrapper {
+    min-width: 312px;
+  }
+  &__about {
+    &-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-top: 30px;
+      column-gap: 10px;
+      row-gap: 10px;
+    }
+    &-text {
+      @include fonts.font(14px, normal, 20px, 0.2px);
+      color: #1b1c21;
+      text-align: left;
+      margin: 0;
+      max-height: 155px;
+      overflow: hidden;
+      transition: max-height 0.3s;
+
+      &-expand {
+        background-color: inherit;
+        border: none;
+        display: flex;
+        vertical-align: top;
+        margin-top: 10px;
+        cursor: pointer;
+        & img {
+          transition: transform 0.5s;
+          transform: rotate(0);
+          
+        }
+        & span {
+          display: inline-block;
+          @include fonts.font(16px, 500, 24px, -0.2px);
+          transition: transform 0.5s;
+          transform: translateY(0);
+        }
+      }
+    }
+    &-image {
+      width: 47%;
+      max-height: 307px;
+      object-fit: contain;
+    }
+  }
+}
+.secret {
+  height: 24px;
+  overflow: hidden;
+}
+//classes for js
+//Читать больше
+.expanded-about {
+  max-height: 500px;
+}
+.expand-arrow {
+  transform: rotate(180deg) !important;
+}
+.expand-text {
+  transform: translateY(-50%) !important;
+ 
 }
 
+
 .slider {
-  display:flex;
+  display: flex;
   flex-wrap: wrap;
   list-style-type: none;
+  padding-inline-start: 0px;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  &::-webkit-scrollbar {
+    display: none;
+  }
   &__item {
+    @include fonts.font(16px, normal, 24px, -0.2px);
     padding: 8px 22px;
+    white-space: nowrap;
+    color: #7e7e82;
   }
 }
 //tablet body
 @media (max-width: $desktop-width) {
   .body {
     &__page-title {
-      display:block;
+      display: block;
     }
-  }  
   }
+  .slider {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+}
+// mobile body
+@media (max-width: $tablet-width) {
+  .body {
+    &__page-title {
+      display: block;
+    }
+    &__about {
+      &-container {
+        flex-direction: column;
+      }
+      &-image {
+        width: auto;
+      }
+    }
+  }
+  .slider {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+}
 //----------------------FOOTER----------------------
 .footer {
   padding: 0 24px;
