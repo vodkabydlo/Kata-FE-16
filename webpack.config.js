@@ -26,8 +26,8 @@ module.exports = {
     }),
   ],
   devServer: {
-    port: 6666,/* chrome considers it to be an unsafe port so in order to access the server you should set special flag to be able to use the port. But since i've put so many hours in this build i want it to be 666 ( •̀ᴗ•́ )و */
-    //host: '192.168.56.1',
+    port: 8083,
+    host: require("os").userInfo().username == "tvbur" ? "192.168.31.199" : "localhost"
   },  
   module: {
     rules: [

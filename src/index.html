@@ -16,14 +16,15 @@
       <footer class="side-menu__footer"></footer>
     </div>
     <main class="main-container">
-      <header class="upper-menu main-container__upper-menu">
+      <header class="upper-menu ">
         <h1 class="upper-menu__page-title">Услуги и сервисы</h1>
         <div class="upper-menu__left">
           <div class="upper-menu__item-tablet upper-menu__item">
             <img src="./img/ic/burger.svg" />
           </div>
-          <div class="delimiter item upper-menu__item-tablet upper-menu__item">
-          </div>
+          <div
+            class="delimiter item upper-menu__item-tablet upper-menu__item"
+          ></div>
           <div class="upper-menu__item-tablet group-logo upper-menu__item">
             <img src="./img/ic/Group.svg" />
           </div>
@@ -38,8 +39,9 @@
           <div class="upper-menu__item-tablet upper-menu__item">
             <img src="./img/ic/profile.svg" />
           </div>
-          <div class="delimiter item upper-menu__item-tablet upper-menu__item">
-          </div>
+          <div
+            class="delimiter item upper-menu__item-tablet upper-menu__item"
+          ></div>
           <div class="upper-menu__item">
             <p class="upper-menu__item-text">Оставить заявку</p>
             <img src="./img/ic/repair.svg" />
@@ -50,7 +52,7 @@
           </div>
         </div>
       </header>
-      <div class="body main-container__body">
+      <div class="body">
         <h1 class="body__page-title">Услуги и сервисы</h1>
         <div class="body__slider">
           <ul class="slider">
@@ -64,23 +66,209 @@
         </div>
         <article class="body__about-container">
           <div class="body__text-wrapper">
-            <p class="body__about-text">Мы являемся авторизованным сервисным центром по ремонту техники Dell. Только у нас вы можете отремонтировать свой ноутбук Dell с официальной гарантией производителя.<br><br>Мы успешно работаем с 1992 года и заслужили репутацию надежного партнера, что подтверждает большое количество постоянных клиентов. Мы гордимся тем, что к нам обращаются по рекомендациям и, в свою очередь, советуют нас родным и близким. <br><br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt laborum, pariatur voluptas, fuga adipisci delectus repellat recusandae tempora at, sapiente similique deserunt quaerat facere debitis dolores esse veritatis commodi soluta?
-            Corrupti laudantium, repellat beatae possimus illo aliquam suscipit voluptatum voluptates saepe nulla aliquid sit excepturi delectus ut esse velit consequatur autem aut facere. Vel reprehenderit iste optio maxime exercitationem quis.
-            Ipsa quaerat necessitatibus odio beatae enim fugiat blanditiis sapiente optio sequi quas autem hic, dicta ipsum! Eaque ullam pariatur eligendi deleniti molestias iste nesciunt! Tenetur ea exercitationem quibusdam! Veritatis, molestias.
-            Id, magni a? Praesentium soluta rem ea nam atque quam deserunt. Officia tenetur explicabo obcaecati dolore possimus recusandae pariatur? Fugit neque voluptate ut deleniti laudantium, ex accusamus. Minima, odio! Cumque.
-            Ipsa ullam dolore reprehenderit, consequuntur ut aspernatur pariatur aliquid non ipsum quia tempora accusamus sed sapiente et corrupti corporis suscipit quod impedit maxime provident natus molestiae. Inventore quam fugit repudiandae!</p>
-            <button id="read_button" class="body__about-text-expand">
-             <img src="./img/ic/Expand.svg" alt="Expand text">
-             <div class="secret"><span>Читать далее <br> Свернуть</span></div>
+            <p class="body__about-text about-expand-content">
+              Мы являемся авторизованным сервисным центром по ремонту техники
+              Dell. Только у нас вы можете отремонтировать свой ноутбук Dell с
+              официальной гарантией производителя.<br /><br />Мы успешно
+              работаем с 1992 года и заслужили репутацию надежного партнера, что
+              подтверждает большое количество постоянных клиентов. Мы гордимся
+              тем, что к нам обращаются по рекомендациям и, в свою очередь,
+              советуют нас родным и близким. <br /><br />
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
+              laborum, pariatur voluptas, fuga adipisci delectus repellat
+              recusandae tempora at, sapiente similique deserunt quaerat facere
+              debitis dolores esse veritatis commodi soluta? Corrupti
+              laudantium, repellat beatae possimus illo aliquam suscipit
+              voluptatum voluptates saepe nulla aliquid sit excepturi delectus
+              ut esse velit consequatur autem aut facere. Vel reprehenderit iste
+              optio maxime exercitationem quis. Ipsa quaerat necessitatibus odio
+              beatae enim fugiat blanditiis sapiente optio sequi quas autem hic,
+              dicta ipsum! Eaque ullam pariatur eligendi deleniti molestias iste
+              nesciunt! Tenetur ea exercitationem quibusdam! Veritatis,
+              molestias. Id, magni a? Praesentium soluta rem ea nam atque quam
+              deserunt. Officia tenetur explicabo obcaecati dolore possimus
+              recusandae pariatur? Fugit neque voluptate ut deleniti laudantium,
+              ex accusamus. Minima, odio! Cumque. Ipsa ullam dolore
+              reprehenderit, consequuntur ut aspernatur pariatur aliquid non
+              ipsum quia tempora accusamus sed sapiente et corrupti corporis
+              suscipit quod impedit maxime provident natus molestiae. Inventore
+              quam fugit repudiandae!
+            </p>
+            <button class="about-expand-button body__about-text-expand">
+              <img
+                src="./img/ic/Expand.svg"
+                alt="Expand text"
+                class="about-expand-arrow"
+              />
+              <div class="secret">
+                <span class="about-expand-text">
+                  Читать далее
+                  <br />
+                  Свернуть
+                  </span>
+              </div>
             </button>
           </div>
-          <img src="./img/_MG_3223.jpg" alt="Company logo" class="body__about-image" />
+          <img
+            src="./img/_MG_3223.jpg"
+            alt="Company logo"
+            class="body__about-image"
+          />
         </article>
-        <div class="body__brands"></div>
-        <div class="main-container__categories"></div>
+        <div class="list-block brands">
+          <div class="list-block__header">
+            <h2 class="list-block__header-text">
+              Ремонт техники различных брендов
+            </h2>
+          </div>
+          <div class="list-block__container brands-expand-content">
+            <div class="list-block__container-item">
+              <img
+                src="./img/Bitmap-1.svg"
+                alt=""
+                class="list-block__container-item-logo"
+              />
+              <img src="./img/ic/go.svg" alt="" class="container-item-arrow" />
+            </div>
+            <div class="list-block__container-item">
+              <img
+                src="./img/Bitmap-2.svg"
+                alt=""
+                class="list-block__container-item-logo"
+              />
+              <img src="./img/ic/go.svg" alt="" class="container-item-arrow" />
+            </div>
+            <div class="list-block__container-item">
+              <img
+                src="./img/Bitmap-3.svg"
+                alt=""
+                class="list-block__container-item-logo"
+              />
+              <img src="./img/ic/go.svg" alt="" class="container-item-arrow" />
+            </div>
+            <div class="list-block__container-item">
+              <img
+                src="./img/Bitmap-4.svg"
+                alt=""
+                class="list-block__container-item-logo"
+              />
+              <img src="./img/ic/go.svg" alt="" class="container-item-arrow" />
+            </div>
+            <div class="list-block__container-item">
+              <img
+                src="./img/Bitmap-5.svg"
+                alt=""
+                class="list-block__container-item-logo"
+              />
+              <img src="./img/ic/go.svg" alt="" class="container-item-arrow" />
+            </div>
+            <div class="list-block__container-item">
+              <img
+                src="./img/Bitmap-5.svg"
+                alt=""
+                class="list-block__container-item-logo"
+              />
+              <img src="./img/ic/go.svg" alt="" class="container-item-arrow" />
+            </div>
+            <div class="list-block__container-item">
+              <img
+                src="./img/Bitmap-1.svg"
+                alt=""
+                class="list-block__container-item-logo"
+              />
+              <img src="./img/ic/go.svg" alt="" class="container-item-arrow" />
+            </div>
+            <div class="list-block__container-item">
+              <img
+                src="./img/Bitmap-2.svg"
+                alt=""
+                class="list-block__container-item-logo"
+              />
+              <img src="./img/ic/go.svg" alt="" class="container-item-arrow" />
+            </div>
+            <div class="list-block__container-item">
+              <img
+                src="./img/Bitmap-3.svg"
+                alt=""
+                class="list-block__container-item-logo"
+              />
+              <img src="./img/ic/go.svg" alt="" class="container-item-arrow" />
+            </div>
+            <div class="list-block__container-item">
+              <img
+                src="./img/Bitmap-4.svg"
+                alt=""
+                class="list-block__container-item-logo"
+              />
+              <img src="./img/ic/go.svg" alt="" class="container-item-arrow" />
+            </div>
+            
+          </div>
+          <button class="brands-expand-button body__about-text-expand">
+            <img
+              src="./img/ic/Expand.svg"
+              alt="Expand text"
+              class="brands-expand-arrow"
+            />
+            <div class="secret">
+              <span class="brands-expand-text">
+                Показать все
+                <br />
+                Свернуть
+                </span>
+            </div>
+          </button>
+        </div>
+        <div class="list-block types">
+          <div class="list-block__header">
+            <h2 class="list-block__header-text">
+              Ремонт различных видов техники
+            </h2>
+          </div>
+          <div class="list-block__container types-expand-content">
+            <div class="list-block__container-item">
+              <span>Ремонт ноутбуков</span>
+              <img src="./img/ic/go.svg" alt="" class="container-item-arrow" />
+            </div>
+            <div class="list-block__container-item">
+              <span>Ремонт планшетов</span>
+              <img src="./img/ic/go.svg" alt="" class="container-item-arrow" />
+            </div>
+            <div class="list-block__container-item">
+              <span>Ремонт ПК</span>
+              <img src="./img/ic/go.svg" alt="" class="container-item-arrow" />
+            </div>
+            <div class="list-block__container-item">
+              <span>Ремонт мониторов</span>
+              <img src="./img/ic/go.svg" alt="" class="container-item-arrow" />
+            </div>
+            <div class="list-block__container-item">
+              <span>Ремонт МФУ</span>
+              <img src="./img/ic/go.svg" alt="" class="container-item-arrow" />
+            </div>
+            <div class="list-block__container-item">
+              <span>Ремонт смартфонов</span>
+              <img src="./img/ic/go.svg" alt="" class="container-item-arrow" />
+            </div>
+          </div>
+          <button class="types-expand-button body__about-text-expand">
+            <img
+              src="./img/ic/Expand.svg"
+              alt="Expand text"
+              class="types-expand-arrow"
+            />
+            <div class="secret">
+              <span class="types-expand-text">
+                Показать все
+                <br />
+                Свернуть
+                </span>
+            </div>
+          </button>
+        </div>
         <div class="pricing"></div>
       </div>
-      <footer class="main-container__footer footer">
+      <footer class="footer">
         <div>i am footer</div>
       </footer>
     </main>
