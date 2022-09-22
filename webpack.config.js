@@ -18,7 +18,10 @@ module.exports = {
       template: "./index.html",
     }),
     new CleanWebpackPlugin(),
-    new MiniCssExtractPlugin(),
+    new MiniCssExtractPlugin({
+      filename: "[name]-[hash].css",
+      chunkFilename: "[id]-[hash].css",
+    }),
     new CopyWebpackPlugin({
       patterns: [
         { from: path.resolve(__dirname,"./src/img"), to: "img" }

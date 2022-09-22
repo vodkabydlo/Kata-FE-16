@@ -169,15 +169,7 @@ body {
   overflow: hidden;
 }
 //classes for js
-.expand-content {
-  max-height: 500px !important;
-}
-.expand-arrow {
-  transform: rotate(180deg) !important;
-}
-.expand-text {
-  transform: translateY(-50%) !important;
-}
+
 
 .slider {
   display: flex;
@@ -208,6 +200,8 @@ body {
     background: linear-gradient(90deg, #f8f8f8 0%, #ffffff 98.61%);
     display: flex;
     vertical-align: middle;
+    color:rgba(126, 126, 130, 1);
+
     &-text {
       @include fonts.font(16px, normal, 24px, -0.2px, uppercase);
     }
@@ -224,8 +218,8 @@ body {
     &-item {
       width: 240px;
       height: 72px;
-
       background-color: #fff;
+      border-radius: 6px;
       display: flex;
       flex-direction: row;
       align-content: space-around;
@@ -254,6 +248,7 @@ body {
       & span {
        justify-self: flex-start;
        align-self: flex-start;
+       @include fonts.font(16px,500,24px,-0.2px)
       }
       & img {
         justify-self: flex-end;
@@ -262,7 +257,71 @@ body {
     }
   }
 }
+.pricing-header {
+&__child {
+ color: #7E7E82;
+ opacity: 0.72;
+}
+}
+.pricing-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 6px;
+  &__item:not(:first-child) {
+    // background-color: #fff;
+  }
+  &__item:not(:last-child):not(.pricing-header) {
+    // background-color: #fff;
+    border-bottom:1px solid #eaeaea;
+  }
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% - 48px);
+    margin: 0 24px;
+    
+    &-child:first-child {
+      width: 391px;
+      text-align:left;
 
+    }
+    &-child:last-child {
+      justify-self: flex-end;
+      text-align: end;
+
+
+    }
+
+    &-child {
+      width: 15%;
+      @include fonts.font(14px,normal,64px,0.2px);
+      height: 64px;
+
+
+    }
+    
+    // display: grid;
+    // grid-template-columns: minmax(391px, auto) auto auto auto;
+    // &-child:nth-child(2){
+    //   w
+    // }
+    // &-child:nth-child(3){
+    // }
+    // &-child:nth-child(4){
+    // } потом попробую что-нибудь на гридах сверстать полезное
+  }
+}
+.expand-content {
+  max-height: 500px !important;
+}
+.expand-arrow {
+  transform: rotate(180deg) !important;
+}
+.expand-text {
+  transform: translateY(-50%) !important;
+}
 @media (max-width: $desktop-width) {
   .main-container {
     max-width: 1440px;

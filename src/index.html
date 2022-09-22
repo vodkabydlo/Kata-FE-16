@@ -8,15 +8,20 @@
       content="width=device-width, height=device-height,initial-scale=1.0"
     />
     <title>Consortium of Poor Shoplifters</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
   </head>
   <body>
-    <div class="side-menu">
+    <aside class="side-menu">
       <header class="side-menu__upper-menu"></header>
       <nav class="side-menu__navigation"></nav>
       <footer class="side-menu__footer"></footer>
-    </div>
+    </aside>
     <main class="main-container">
-      <header class="upper-menu ">
+      <header class="upper-menu">
         <h1 class="upper-menu__page-title">Услуги и сервисы</h1>
         <div class="upper-menu__left">
           <div class="upper-menu__item-tablet upper-menu__item">
@@ -52,7 +57,7 @@
           </div>
         </div>
       </header>
-      <div class="body">
+      <section class="body">
         <h1 class="body__page-title">Услуги и сервисы</h1>
         <div class="body__slider">
           <ul class="slider">
@@ -105,7 +110,7 @@
                   Читать далее
                   <br />
                   Свернуть
-                  </span>
+                </span>
               </div>
             </button>
           </div>
@@ -202,7 +207,6 @@
               />
               <img src="./img/ic/go.svg" alt="" class="container-item-arrow" />
             </div>
-            
           </div>
           <button class="brands-expand-button body__about-text-expand">
             <img
@@ -215,7 +219,7 @@
                 Показать все
                 <br />
                 Свернуть
-                </span>
+              </span>
             </div>
           </button>
         </div>
@@ -262,12 +266,58 @@
                 Показать все
                 <br />
                 Свернуть
-                </span>
+              </span>
             </div>
           </button>
         </div>
-        <div class="pricing"></div>
-      </div>
+        <div class="pricing list-block ">
+          <div class="list-block__header">
+            <h2 class="list-block__header-text">Цены на услуги</h2>
+          </div>
+          <div class="pricing-container__item pricing-header">
+            <div class="pricing-container__item-child pricing-header__child">Ремонтные услуги</div>
+            <div class="pricing-container__item-child pricing-header__child">Цена</div>
+            <div class="pricing-container__item-child pricing-header__child">Срок</div>
+            <div class="pricing-container__item-child pricing-header__child"></div>
+          </div>
+          <div class="swiper-container-pricing">
+            <div class="pricing-container">
+      
+              <div class="pricing-container__item">
+                <div class="pricing-container__item-child">Диагностика</div>
+                <div class="pricing-container__item-child">Бесплатно</div>
+                <div class="pricing-container__item-child">30 минут</div>
+                <div class="pricing-container__item-child"><button class="order"><span>Заказать</span></button></div>
+              </div>
+              <div class="pricing-container__item">
+                <div class="pricing-container__item-child">Замена дисплея</div>
+                <div class="pricing-container__item-child">1 000 ₽</div>
+                <div class="pricing-container__item-child">30-120 мин</div>
+                <div class="pricing-container__item-child"><button class="order"><span>Заказать</span></button></div>
+              </div>
+              <div class="pricing-container__item">
+                <div class="pricing-container__item-child">Замена полифонического динамика</div>
+                <div class="pricing-container__item-child">1 000 ₽</div>
+                <div class="pricing-container__item-child">30-120 мин</div>
+                <div class="pricing-container__item-child"><button class="order"><span>Заказать</span></button></div>
+              </div>
+              <div class="pricing-container__item">
+                <div class="pricing-container__item-child">Тестирование с выдачей технического заключения</div>
+                <div class="pricing-container__item-child">1 000 ₽</div>
+                <div class="pricing-container__item-child">30-120 мин</div>
+                <div class="pricing-container__item-child"><button class="order"><span>Заказать</span></button></div>
+              </div>
+              <div class="pricing-container__item">
+                <div class="pricing-container__item-child">Замена программного обеспечения</div>
+                <div class="pricing-container__item-child">1 000 ₽</div>
+                <div class="pricing-container__item-child">30-120 мин</div>
+                <div class="pricing-container__item-child"><button class="order"><span>Заказать</span></button></div>
+              </div>
+            </div>
+          </div>
+          <div class="pricing-commercial"></div>
+        </div>
+      </section>
       <footer class="footer">
         <div>i am footer</div>
       </footer>
