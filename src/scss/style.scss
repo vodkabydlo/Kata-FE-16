@@ -339,6 +339,27 @@ body {
     color: #1B1C21;
   }
 }
+.footer {
+  padding: 80px 24px 0;
+  // margin-top: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  &__child {
+    @include fonts.font(14px,500,16px,inherit);
+    opacity:0.72;
+    color:#7e7e82;
+    &:nth-child(1) {
+
+    }
+    &:nth-child(2) {
+      text-align: center;
+      text-decoration: none;
+    }
+    &:nth-child(3) {
+      text-align: end;
+    }
+  }
+}
 .expand-content {
   max-height: 500px !important;
 }
@@ -422,29 +443,21 @@ body {
     flex-wrap: nowrap;
     overflow-x: auto;
   }
-}
-
-//----------------------FOOTER----------------------
-.footer {
-  padding: 80px 24px 0;
-  // margin-top: auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  &__child {
-    @include fonts.font(14px,500,16px,inherit);
-    opacity:0.72;
-    color:#7e7e82;
-    &:nth-child(1) {
-
-    }
-    &:nth-child(2) {
-      text-align: center;
-      text-decoration: none;
-    }
-    &:nth-child(3) {
-      text-align: end;
+  .footer {
+    padding: 50px 16px 0;
+    display: flex;
+    flex-direction: column;
+    column-gap: 16px;
+    row-gap: 16px;
+    justify-content: center;
+    align-items: center;
+    &__child{
+      text-align: center !important;
     }
   }
 }
+
+//----------------------FOOTER----------------------
+
 //----------------------LEFT MENU----------------------
 //----------------------RIGHT MENUS----------------------

@@ -1,1 +1,4 @@
 autoprefixes
+Добавить кнопки 
+добавить swiper-container 1 и 2
+получить коммерческое предложение fit-content на мобиле
