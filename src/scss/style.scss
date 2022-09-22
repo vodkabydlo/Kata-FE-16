@@ -340,7 +340,7 @@ body {
   }
 }
 .footer {
-  padding: 80px 24px 0;
+  padding: 80px 24px 25px;
   // margin-top: auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -444,7 +444,7 @@ body {
     overflow-x: auto;
   }
   .footer {
-    padding: 50px 16px 0;
+    padding: 50px 16px 25px;
     display: flex;
     flex-direction: column;
     column-gap: 16px;
