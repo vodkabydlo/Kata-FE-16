@@ -23,7 +23,18 @@
     "url": "https://github.com/vodkabydlo/Kata-FE-16/issues"
   },
   "homepage": "https://github.com/vodkabydlo/Kata-FE-16#readme",
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "last 2 version",
+    "not dead",
+    "iOS >= 9"
+  ],
   "devDependencies": {
+    "autoprefixer": "^10.4.12",
     "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.1",
