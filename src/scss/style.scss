@@ -4,7 +4,9 @@
 $mobile-width: 319px;
 $tablet-width: 767px;
 $desktop-width: 1439px;
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 html {
   font-family: TT Lakes;
   height: 100%;
@@ -12,7 +14,7 @@ html {
 }
 body {
   background: #f8f8f8;
-  height: 100vh;
+  // height: 100%;
 }
 .main-container {
   margin: 0 auto;
@@ -335,10 +337,14 @@ body {
   align-items: center;
   width: fit-content;
 
-  &, &:hover, &:link, &:active, &:visited {
+  &,
+  &:hover,
+  &:link,
+  &:active,
+  &:visited {
     text-decoration: none;
-    @include fonts.font(16px,500,24px,-0.2px);
-    color: #1B1C21;
+    @include fonts.font(16px, 500, 24px, -0.2px);
+    color: #1b1c21;
   }
 }
 .footer {
@@ -347,11 +353,10 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   &__child {
-    @include fonts.font(14px,500,16px,inherit);
-    opacity:0.72;
-    color:#7e7e82;
+    @include fonts.font(14px, 500, 16px, inherit);
+    opacity: 0.72;
+    color: #7e7e82;
     &:nth-child(1) {
-
     }
     &:nth-child(2) {
       text-align: center;
@@ -371,75 +376,161 @@ body {
 .expand-text {
   transform: translateY(-50%) !important;
 }
-
-
+.menu-expanded {
+  transform: none !important;
+}
 //----------------------FOOTER----------------------
 
 //----------------------LEFT MENU----------------------
-.side-menu{
+.side-menu-wrapper {
   position: absolute;
-  z-index: 1;
-  max-height: 887px ;
-  background-color: #FFFFFF; 
+  max-height: inherit;
+  z-index: 1000;
+  background-color: #fff;
+}
+
+.side-menu {
+  button {
+    border: none;
+    background: inherit;
+    padding: 0;
+    cursor: pointer;
+  }
+  // &-wrapper {
+  //   position: absolute;
+  //   height: 100%;
+  //   z-index: 1;
+  //   background-color: #fff;
+  // }
+
+  max-height: 887px;
+  height: 100%; 
   width: 276px;
   display: flex;
   flex-direction: column;
-  &__upper-menu{
+  &-upper {
     padding: 0px 24px;
     height: 88px;
     width: 100%;
     display: flex;
     vertical-align: middle;
+    &__close {
+      display: none;
+    }
+    &__logo-wrapper {
+      display: flex;
+      align-items: center;
+    }
+    &__search {
+      margin-left: auto;
+    }
   }
-  &__close{
-    display: none;
-  }
-  button{
-    border: none;
-    background: inherit;
-  }
-  &__logo-wrapper{
-    display: flex;
-    align-items: center;
-  }
-  &__search{
-    margin-left: auto;
-  }
-  &__navigation{
+  &-nav {
     margin-top: 37px;
     padding: 0px 24px;
-  & ul{
-    list-style: none;
-    margin-block-start: 0em;
-    margin-block-end: 0em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    padding-inline-start: 0px;
+    & ul {
+      list-style: none;
+      margin-block-start: 0em;
+      margin-block-end: 0em;
+      margin-inline-start: 0px;
+      margin-inline-end: 0px;
+      padding-inline-start: 0px;
+    }
+    &__item {
+      margin-bottom: 28px;
+      @include fonts.font(16px, 500, 24px, -0.2px);
+    }
+    &__item:nth-child(2) {
+      color: #7e7e82;
+    }
+    &__item:nth-child(2)::before {
+      content: "";
+      position: absolute;
+      left: 0px;
+      width: 0px;
+      height: 20px;
+      border: 2px solid #41f6d7;
+    }
   }
-    &-item{
-    margin-bottom: 28px;
-    @include fonts.font(16px,500,24px,-0.2px)
-  }
-  &-item:nth-child(2){
-    color: #7E7E82;
-  }
-  &-item:nth-child(2)::before{
-    content: "";
-    position: absolute;
-    left:  0px;
-    width: 0px;
-    height: 20px;
-    border: 2px solid #41F6D7;
-  }
-  }
+  &-footer {
+    padding: 0 24px;
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    &__contacts {
+      &-button:nth-child(2) {
+        margin: 16px;
+      }
+    }
+    &__mail { 
+      margin-bottom: 12px; 
+      &,
+      &:hover,
+      &:link,
+      &:active,
+      &:visited {
+        text-decoration: none;
+        @include fonts.font(16px, 500, 24px, -0.2px);
+        color: #1b1c21;
+      }
+    }
 
-
+    &__phone {
+      margin-bottom: 40px;
+      &,
+      &:hover,
+      &:link,
+      &:active,
+      &:visited {
+        text-decoration: none;
+        @include fonts.font(24px, bold, 32px, -0.6px);
+        color: #1b1c21;
+      }
+    }
+    &__lang {
+      button {
+      padding-right: 7px;
+    }
+    }
+    
+  }
 }
-
+.lang-active {
+  color: #7e7e82;
+}
 //----------------------RIGHT MENUS----------------------
-@media (max-width: $desktop-width) { 
+//this media is to solve side-menu and main container overlapping
+@media (max-width: 1674px) {
+  .main-container {
+    margin: 0 auto 0 276px;
+  }
+}
+@media (max-width: $desktop-width) {
+  .side-menu-wrapper {
+    box-shadow: -2px 0px 4px rgba(69, 79, 126, 0.02), 12px 0px 52px rgba(14, 24, 80, 0.2);
+    
+    transform-origin: 0% 0%;
+    transform: translate(-100%, 0);
+    
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+    width: 100%;
+    max-width: 360px;
+  }
+  .side-menu {
+    max-width: 360px;
+    width: 100%;
+    &-upper {
+      &__close {
+        display:block;
+      }
+      &__logo-wrapper {
+        margin-left: 16px;
+      }
+    }
+  }
   .main-container {
     max-width: 1440px;
+    margin: auto;
   }
 
   .upper-menu {
@@ -519,19 +610,18 @@ body {
     row-gap: 16px;
     justify-content: center;
     align-items: center;
-    &__child{
+    &__child {
       text-align: center !important;
     }
   }
-  .side-menu{
+  .side-menu {
     max-width: 360px;
     width: 100%;
-    &__close{
+    &__close {
       display: block;
     }
-    &__logo-wrapper{
-      padding-left:16px;
+    &__logo-wrapper {
+      padding-left: 16px;
     }
   }
-  
 }
