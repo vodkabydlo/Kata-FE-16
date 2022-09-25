@@ -29,6 +29,5 @@ const openBurger = document.getElementById("openBurger");
 const closeBurger = document.getElementById("closeBurger");
 const expandLeftMenu = () => document.querySelector(".side-menu-wrapper").classList.toggle("menu-expanded");
 openBurger.addEventListener("click", function(){expandLeftMenu()}, false);
-addReadMoreListeners();
 closeBurger.addEventListener("click", function(){expandLeftMenu()}, false);
 addReadMoreListeners();
