@@ -18,11 +18,27 @@ function expandBodyParts (place) {
     f(`.${place}-expand-text`).classList.toggle("expand-text");
     f(`.${place}-expand-arrow`).classList.toggle("expand-arrow");  
 }
-function addListeners() {
+function addReadMoreListeners() {
 //add expandable body parts here into parts array:
     const places = ["about","brands", "types"];
     places.forEach(place => {
         f(`.${place}-expand-button`).addEventListener("click", function(){expandBodyParts(place)}, false)
     });
 }
-addListeners();
+// left
+const openBurger = document.getElementById("openBurger");
+const closeBurger = document.getElementById("closeBurger");
+const expandLeftMenu = () => document.querySelector(".side-menu-wrapper").classList.toggle("menu-expanded");
+openBurger.addEventListener("click", function(){expandLeftMenu()}, false);
+closeBurger.addEventListener("click", function(){expandLeftMenu()}, false);
+addReadMoreListeners();
+
+//right 
+const openFeedback = document.getElementById("openFeedback");
+const closeFeedback = document.getElementById("closeFeedback");
+const expandFeedback = () => {
+    document.querySelector(".feedback__close").classList.toggle("visible");
+    document.querySelector(".feedback").classList.toggle("menu-expanded")
+};
+openFeedback.addEventListener("click", function(){expandFeedback()}, false);
+closeFeedback.addEventListener("click", function(){expandFeedback()}, false);
