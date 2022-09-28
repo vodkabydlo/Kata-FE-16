@@ -47,7 +47,7 @@
               <button class="side-menu-footer__contacts-button">
                 <img src="./img/ic/call.svg" alt="" />
               </button>
-              <button class="side-menu-footer__contacts-button">
+              <button class="side-menu-footer__contacts-button " id="openFeedback">
                 <img src="./img/ic/chat.svg" alt="" />
               </button>
               <button class="side-menu-footer__contacts-button">
@@ -173,7 +173,7 @@
                 Ремонт техники различных брендов
               </h2>
             </div>
-            <div class="swiper">
+            <div class="swiper-container">
               <div
                 class="list-block__container brands-expand-content swiper-wrapper"
               >
@@ -490,7 +490,19 @@
           </div>
         </footer>
       </main>
-      <aside class="contact-forms"></aside>
+      <aside class="contact-us"></aside>
+      <aside class="feedback">
+        <button class="feedback__close" id="closeFeedback"><img src="./img/ic/burgerclose.svg" alt="" class=""></button>
+        <form class="feedback__form">
+          <label class="feedback__heading">Обратная связь</label>
+          <input type="text" name="name" id="" class="feedback__form-name" placeholder="Имя">
+          <input type="tel" name="tel" id="" class="feedback__form-tel" placeholder="Телефон">
+          <input type="email" name="email" id="" class="feedback__form-email" placeholder="Электронная почта">
+          <textarea name="messageUs" id="messageUs" placeholder="Сообщение"></textarea>
+          <label for="messageUs">Нажимая “отправить”, вы даете согласие на <a href="#">обработку персональных данных</a> и соглашаетесь с нашей <a href="">политикой конфиденциальности</a></label>
+          <button class="feedback__submit order"><span>Отправить</span><img src="./img/ic/goside.svg"></button>
+        </form>
+      </aside>
     </div>
   </body>
 </html>

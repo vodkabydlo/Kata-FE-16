@@ -176,11 +176,11 @@ body {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background: #ff3e79;
+  background: #ff3e79 !important;
   border-radius: 16px;
   height: 32px;
   width: 119px;
-  border-width: 0px;
+  border-width: 0px !important;
   span {
     @include fonts.font(12px, bold, 14px, -0.15px, uppercase);
     color: white;
@@ -500,18 +500,88 @@ body {
 }
 //----------------------RIGHT MENUS----------------------
 //this media is to solve side-menu and main container overlapping
+.feedback {
+  &__heading {
+    @include fonts.font(28px, bold, 40px, -0.6px);
+    margin-left: 16px;
+    margin-top: 32px;
+    &::before {
+      content: "";
+      position: absolute;
+      left: -0px;
+      width: 0px;
+      height: 40px;
+      border: 2px solid rgba(65, 246, 215, 1);
+      border-radius: 5px;
+    }
+  }
+  button {
+    background:none;
+    border: none;
+  }
+  transform-origin: 0% 0%;
+  transform: translate(100%, 0);
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+  position: absolute;
+  right: 0px;
+  top:0px;
+  max-height: inherit;
+  height: 100%;
+  z-index: 1000;
+  background-color: #fff;
+  max-width: 440px;
+  // width: 100%;
+  &__form {
+    input, textarea  {
+      padding: 12px;
+      margin: 16px;
+      width: calc(100% - 29px);
+      border: 1px solid rgba(234, 234, 234, 1);
+    }
+    [for="messageUs"] {
+      padding: 12px;
+      margin: 16px;
+      width: calc(100% - 29px);
+    }
+    &__name {
+
+    }
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    [type="submit"] {
+      background: #ff3e79;
+    }
+  }
+ &__submit {
+  align-self: flex-end;
+  margin-right: 16px;
+ } 
+ &__close {
+  display: none;
+  margin-top: 32px;
+  position: absolute;
+  left: -65px;
+ }
+}
+.visible {
+  display:block;
+}
 @media (max-width: 1674px) {
   .main-container {
     margin: 0 auto 0 276px;
   }
 }
 @media (max-width: $desktop-width) {
+  .feedback__close{
+    position: static;
+    left: 0px;
+    margin-left: 16px;
+  }
   .side-menu-wrapper {
     box-shadow: -2px 0px 4px rgba(69, 79, 126, 0.02), 12px 0px 52px rgba(14, 24, 80, 0.2);
-    
     transform-origin: 0% 0%;
     transform: translate(-100%, 0);
-    
     transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
     width: 100%;
     max-width: 360px;
@@ -601,6 +671,11 @@ body {
   .slider {
     flex-wrap: nowrap;
     overflow-x: auto;
+  }
+  .brands-expand-content {
+    flex-direction: row;
+    flex-wrap:nowrap;
+    max-height: 74px;
   }
   .footer {
     padding: 50px 16px 25px;

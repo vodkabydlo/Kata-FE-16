@@ -1,1 +1,0 @@
-// const swiper = document.querySelector('.swiper').swiper;

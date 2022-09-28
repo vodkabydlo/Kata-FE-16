@@ -25,9 +25,20 @@ function addReadMoreListeners() {
         f(`.${place}-expand-button`).addEventListener("click", function(){expandBodyParts(place)}, false)
     });
 }
+// left
 const openBurger = document.getElementById("openBurger");
 const closeBurger = document.getElementById("closeBurger");
 const expandLeftMenu = () => document.querySelector(".side-menu-wrapper").classList.toggle("menu-expanded");
 openBurger.addEventListener("click", function(){expandLeftMenu()}, false);
 closeBurger.addEventListener("click", function(){expandLeftMenu()}, false);
 addReadMoreListeners();
+
+//right 
+const openFeedback = document.getElementById("openFeedback");
+const closeFeedback = document.getElementById("closeFeedback");
+const expandFeedback = () => {
+    document.querySelector(".feedback__close").classList.toggle("visible");
+    document.querySelector(".feedback").classList.toggle("menu-expanded")
+};
+openFeedback.addEventListener("click", function(){expandFeedback()}, false);
+closeFeedback.addEventListener("click", function(){expandFeedback()}, false);
