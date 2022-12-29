@@ -44,10 +44,10 @@
           </nav>
           <footer class="side-menu-footer">
             <div class="side-menu-footer__contacts">
-              <button class="side-menu-footer__contacts-button">
+              <button class="side-menu-footer__contacts-button phone-us__open">
                 <img src="./img/ic/call.svg" alt="" />
               </button>
-              <button class="side-menu-footer__contacts-button " id="openFeedback">
+              <button class="side-menu-footer__contacts-button feedback__open" id="openFeedback">
                 <img src="./img/ic/chat.svg" alt="" />
               </button>
               <button class="side-menu-footer__contacts-button">
@@ -71,37 +71,37 @@
         <header class="upper-menu">
           <h1 class="upper-menu__page-title">Услуги и сервисы</h1>
           <div class="upper-menu__left">
-            <div class="upper-menu__item-tablet upper-menu__item ">
+            <button class="upper-menu__item-tablet upper-menu__item ">
               <img  id="openBurger" src="./img/ic/burger.svg" />
-            </div>
+            </button>
             <div
               class="delimiter item upper-menu__item-tablet upper-menu__item"
             ></div>
-            <div class="upper-menu__item-tablet group-logo upper-menu__item">
+            <button class="upper-menu__item-tablet group-logo upper-menu__item">
               <img src="./img/ic/Group.svg" />
-            </div>
+            </button>
           </div>
           <div class="upper-menu__right">
-            <div class="upper-menu__item-tablet upper-menu__item">
+            <button class="upper-menu__item-tablet upper-menu__item phone-us__open">
               <img src="./img/ic/call.svg" />
-            </div>
-            <div class="upper-menu__item-tablet upper-menu__item">
+            </button>
+            <button class="upper-menu__item-tablet upper-menu__item feedback__open">
               <img src="./img/ic/chat.svg" />
-            </div>
-            <div class="upper-menu__item-tablet upper-menu__item">
+            </button>
+            <button class="upper-menu__item-tablet upper-menu__item">
               <img src="./img/ic/profile.svg" />
-            </div>
+            </button>
             <div
               class="delimiter item upper-menu__item-tablet upper-menu__item"
             ></div>
-            <div class="upper-menu__item">
+            <button class="upper-menu__item">
               <p class="upper-menu__item-text">Оставить заявку</p>
               <img src="./img/ic/repair.svg" />
-            </div>
-            <div class="upper-menu__item">
+            </button>
+            <button class="upper-menu__item">
               <p class="upper-menu__item-text">Статус ремонта</p>
               <img src="./img/ic/checkstatus.svg" />
-            </div>
+            </button>
           </div>
         </header>
         <section class="body">
@@ -490,9 +490,17 @@
           </div>
         </footer>
       </main>
-      <aside class="contact-us"></aside>
+      <aside class="phone-us">
+        <button class="phone-us__close" id="closephone-us"><img src="./img/ic/burgerclose.svg" alt="" class=""></button>
+        <form class="phone-us__form">
+          <label class="phone-us__heading">Заказать звонок</label>
+          <input type="tel" name="tel" id="" class="phone-us__form-tel" placeholder="Телефон">
+          <label for="tel">Нажимая “отправить”, вы даете согласие на <a href="#">обработку персональных данных</a> и соглашаетесь с нашей <a href="">политикой конфиденциальности</a></label>
+          <button class="feedback__submit order"><span>Отправить</span><img src="./img/ic/goside.svg"></button>
+        </form>
+      </aside>
       <aside class="feedback">
-        <button class="feedback__close" id="closeFeedback"><img src="./img/ic/burgerclose.svg" alt="" class=""></button>
+        <button class="feedback__close " id="closeFeedback"><img src="./img/ic/burgerclose.svg" alt="" class=""></button>
         <form class="feedback__form">
           <label class="feedback__heading">Обратная связь</label>
           <input type="text" name="name" id="" class="feedback__form-name" placeholder="Имя">

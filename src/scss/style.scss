@@ -15,6 +15,12 @@ html {
 body {
   background: #f8f8f8;
   // height: 100%;
+  // overflow-x: hidden;
+}
+button:hover {
+  cursor: pointer;
+  filter: brightness(50%);
+  transition: filter 0.5;
 }
 .main-container {
   margin: 0 auto;
@@ -27,7 +33,7 @@ body {
 
 //----------------------UPPER MENU----------------------
 
-.upper-menu {
+.upper-menu { 
   height: 88px;
   display: flex;
   flex-direction: row;
@@ -82,6 +88,11 @@ body {
       color: rgba(27, 28, 33, 1);
       @include fonts.font(16px, normal, 24px, -0.2px);
     }
+  }
+  button {
+    border: none;
+    align-items: center;
+    background: none;
   }
 }
 .group-logo {
@@ -378,6 +389,7 @@ body {
 }
 .menu-expanded {
   transform: none !important;
+  display:block !important;
 }
 //----------------------FOOTER----------------------
 
@@ -385,7 +397,7 @@ body {
 .side-menu-wrapper {
   position: absolute;
   max-height: inherit;
-  z-index: 1000;
+  z-index: 999;
   background-color: #fff;
 }
 
@@ -500,7 +512,7 @@ body {
 }
 //----------------------RIGHT MENUS----------------------
 //this media is to solve side-menu and main container overlapping
-.feedback {
+.feedback, .phone-us {
   &__heading {
     @include fonts.font(28px, bold, 40px, -0.6px);
     margin-left: 16px;
@@ -519,7 +531,8 @@ body {
     background:none;
     border: none;
   }
-  transform-origin: 0% 0%;
+  display: none;
+  transform-origin: 0% 100%;
   transform: translate(100%, 0);
   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
   position: absolute;
@@ -538,7 +551,7 @@ body {
       width: calc(100% - 29px);
       border: 1px solid rgba(234, 234, 234, 1);
     }
-    [for="messageUs"] {
+    [for="messageUs"], [for="tel"] {
       padding: 12px;
       margin: 16px;
       width: calc(100% - 29px);
@@ -564,6 +577,10 @@ body {
   left: -65px;
  }
 }
+// .phone-us {
+//   transform: none;
+
+// }
 .visible {
   display:block;
 }
@@ -573,9 +590,10 @@ body {
   }
 }
 @media (max-width: $desktop-width) {
-  .feedback__close{
+  .feedback__close, .phone-us__close{
     position: static;
     left: 0px;
+    margin-top: 24px;
     margin-left: 16px;
   }
   .side-menu-wrapper {

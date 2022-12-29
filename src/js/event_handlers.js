@@ -12,7 +12,8 @@
 
 //v 2.0
 const f = (selector) => document.querySelector(selector);
-
+const fa = (selectorAll) => document.querySelectorAll(selectorAll);
+const idQuery = (id) => document.getElementById(id)
 function expandBodyParts (place) {
     f(`.${place}-expand-content`).classList.toggle("expand-content");
     f(`.${place}-expand-text`).classList.toggle("expand-text");
@@ -26,19 +27,37 @@ function addReadMoreListeners() {
     });
 }
 // left
-const openBurger = document.getElementById("openBurger");
-const closeBurger = document.getElementById("closeBurger");
-const expandLeftMenu = () => document.querySelector(".side-menu-wrapper").classList.toggle("menu-expanded");
+const openBurger = idQuery("openBurger");
+const closeBurger = idQuery("closeBurger");
+const expandLeftMenu = () => f(".side-menu-wrapper").classList.toggle("menu-expanded");
 openBurger.addEventListener("click", function(){expandLeftMenu()}, false);
 closeBurger.addEventListener("click", function(){expandLeftMenu()}, false);
 addReadMoreListeners();
 
 //right 
-const openFeedback = document.getElementById("openFeedback");
-const closeFeedback = document.getElementById("closeFeedback");
+
+// const openFeedback = document.getElementById("openFeedback");
+// const closeFeedback = document.getElementById("closeFeedback");
+// const expandFeedback = () => {
+//     f(".feedback__close").classList.toggle("visible");
+//     f(".feedback").classList.toggle("menu-expanded")
+// };
+// openFeedback.addEventListener("click", function(){expandFeedback()}, false);
+// closeFeedback.addEventListener("click", function(){expandFeedback()}, false);
+
+const openFeedbackButtons = fa(".feedback__open");
+const closeFeedback = f(".feedback__close")
+const openPhoneusButtons = fa(".phone-us__open");
+const closePhoneus = f(".phone-us__close");
 const expandFeedback = () => {
-    document.querySelector(".feedback__close").classList.toggle("visible");
-    document.querySelector(".feedback").classList.toggle("menu-expanded")
-};
-openFeedback.addEventListener("click", function(){expandFeedback()}, false);
+        f(".feedback__close").classList.toggle("visible");
+        f(".feedback").classList.toggle("menu-expanded")
+    };
+const expandPhoneus = () => {
+    f(".phone-us__close").classList.toggle("visible");
+    f(".phone-us").classList.toggle("menu-expanded")
+}
+openFeedbackButtons.forEach(button => {button.addEventListener("click", function () {expandFeedback()}, false)})
 closeFeedback.addEventListener("click", function(){expandFeedback()}, false);
+openPhoneusButtons.forEach(button => {button.addEventListener("click", function () {expandPhoneus()}, false)})
+closePhoneus.addEventListener("click", function(){expandPhoneus()}, false);

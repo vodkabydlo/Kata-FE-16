@@ -29,8 +29,8 @@ module.exports = {
     }),
   ],
   devServer: {
-    port: 8083,
-    host: require("os").userInfo().username == "tvbur" ? "192.168.31.199" : "localhost"
+    port: 8082,
+    host: "localhost"
   },  
   module: {
     rules: [
